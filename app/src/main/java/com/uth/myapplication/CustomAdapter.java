@@ -35,6 +35,8 @@ public class CustomAdapter extends ArrayAdapter<ImageData> {
         ImageView imageView = convertView.findViewById(R.id.imageView);
         TextView idTextView = convertView.findViewById(R.id.idTextView);
         TextView descriptionTextView = convertView.findViewById(R.id.descriptionTextView);
+        TextView rutaTextView = convertView.findViewById(R.id.rutaTextView);
+        TextView base64TextView = convertView.findViewById(R.id.base64TextView);
 
         // Decodificar la imagen Base64 y establecerla en ImageView
         byte[] decodedString = Base64.decode(currentItem.getImageBase64(), Base64.DEFAULT);
@@ -45,6 +47,9 @@ public class CustomAdapter extends ArrayAdapter<ImageData> {
 
         idTextView.setText("ID: " + currentItem.getId());
         descriptionTextView.setText("Descripción: " + currentItem.getDescription());
+        rutaTextView.setText("Ruta: " + currentItem.getImagePath());
+        base64TextView.setText("Base64: " + currentItem.getImageBase64().substring(0, 10) + "...");
+
 
         return convertView;
     }

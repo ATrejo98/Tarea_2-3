@@ -30,6 +30,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -70,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Deshabilitar el botón de guardar si se ha seleccionado un elemento
             if (elementSelected) {
+                txtDescrip.setEnabled(false);
                 btnGuardarFoto.setEnabled(false);
             }
         }
@@ -99,7 +101,10 @@ public class MainActivity extends AppCompatActivity {
                 db.insert("Imagenes", null, values);
                 db.close();
 
-                // Aquí puedes agregar un Toast u otro tipo de mensaje para indicar que se ha guardado la imagen
+                txtDescrip.setText("");
+                sVerImagenVariableLocal.setImageBitmap(null);
+
+                Toast.makeText(MainActivity.this, "Perfil guardado exitosamente en SQLite", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -147,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         btnGuardarFoto.setEnabled(true);
+        txtDescrip.setEnabled(true);
     }
 
 
