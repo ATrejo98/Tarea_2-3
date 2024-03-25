@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/sVerImagen"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/placeholder" />
+
+
+    <Button
+        android:id="@+id/btnTomarFoto"
+        android:layout_width="96dp"
+        android:layout_height="56dp"
+        android:layout_alignTop="@+id/sVerImagen"
+        android:layout_alignBottom="@+id/sVerImagen"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="285dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="18dp"
+        android:text="FOTO"
+        android:textSize="8dp"
+        app:cornerRadius="5dp" />
+
+    <EditText
+        android:id="@+id/txtDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sVerImagen"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:hint="Descripción" />
+
+    <Button
+        android:id="@+id/btnGuardarFoto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtDescripcion"
+        android:layout_centerHorizontal="true"
+        android:text="Guardar" />
+
+    <Button
+        android:id="@+id/btnListaFotos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnGuardarFoto"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Ver Lista" />
+
+</RelativeLayout>
